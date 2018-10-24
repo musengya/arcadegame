@@ -18,6 +18,6 @@ cd ~/
  git clone https://github.com/musengya/arcadegame.git
 ```
 ## How to Play
-Use of arrow keys to move the player: up, own, left, right
+Use of arrow keys to move the player: up, down, left, right
 ## License
 MIT
