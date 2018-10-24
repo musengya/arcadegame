@@ -1,5 +1,5 @@
+// Declaring the variables
 let modal = document.querySelector(".modal");
-let trigger = document.querySelector(".trigger");
 let closeButton = document.querySelector(".close-button");
 
 // Enemies our player must avoid
@@ -89,7 +89,7 @@ Player.prototype.handleInput = function (keyPress) {
     };
 
     // Once the user reaches the top of the page; the water, the user is
-    // Instantly reset to the starting position
+    // Instantly reset to the starting position and display modal
     if (this.y < 0) {
         setTimeout(() => {
             this.x = 202;
@@ -106,13 +106,13 @@ Player.prototype.handleInput = function (keyPress) {
 let allEnemies = [];
 
 // Location of the 3 enemies on the y axis located on the stone road
-const enemyLocation = [63, 147, 230];
+const enemyPosition = [63, 147, 230];
 
 
 // For each enemy located on the y axis from 0 on the x axis move at a speed of 200 
 // Until randomly regenerated in the enemy update function above
-enemyLocation.forEach(function (locationY) {
-    enemy = new Enemy(0, locationY, 200);
+enemyPosition.forEach(function (posY) {
+    enemy = new Enemy(0, posY, 200);
     allEnemies.push(enemy);
 });
 
@@ -140,11 +140,7 @@ const player = new Player(202, 405);
            window.location.reload();
    });
    
-   /**
-    * @description: This is the JS code for the modal box. The code is taken from
-    * https://sabe.io/tutorials/how-to-create-modal-popup-box
-    */
-   
+   // function for the modal
    function toggleModal() {
            modal.classList.toggle("show-modal");
    }
@@ -155,21 +151,11 @@ const player = new Player(202, 405);
            }
    }
    
-   /**
-    * @description: restart button to the modal box
-    */
+   // restart button for the modal
    const restartModal = document.querySelector("#restart-modal");
-           restartModal.addEventListener("click", function() {
-           window.location.reload();
-   });
-   
-   /**
-    * @description: Add quit game button to the modal box
-    */
-   const quit = document.querySelector("#quit-game");
-           quit.addEventListener("click", function() {
-           modal.classList.remove("show-modal");
-   });
+restartModal.addEventListener("click", function () {
+    window.location.reload();
+});
    
    trigger.addEventListener("click", toggleModal);
    closeButton.addEventListener("click", toggleModal);
