@@ -105,8 +105,8 @@ Player.prototype.handleInput = function (keyPress) {
 // All enemies are placed in an array
 let allEnemies = [];
 
-// Location of the 3 enemies on the y axis located on the stone road
-const enemyPosition = [63, 147, 230];
+// Position of the 3 enemies on the y axis located on the stone road
+const enemyPosition = [62, 146, 232];
 
 
 // For each enemy located on the y axis from 0 on the x axis move at a speed of 200 
@@ -134,7 +134,7 @@ const player = new Player(202, 405);
 
 
     // Add restart button to the instruction section
-    
+
    const restart = document.querySelector("#restart");
            restart.addEventListener("click", function() {
            window.location.reload();
