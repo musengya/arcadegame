@@ -11,7 +11,7 @@ let Enemy = function (x, y, speed) {
     this.speed = speed;
 
     // The image of the enemy of cockroach that is added to the playing field 
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = "images/enemy-bug.png";
 };
 
 // Update the enemy's position, required method for game
@@ -50,7 +50,7 @@ let Player = function (x, y) {
     this.y = y;
 
     //The image of the player of horn-girl is added to the playing field 
-    this.sprite= 'images/char-horn-girl.png';
+    this.sprite= "images/char-horn-girl.png";
 };
 
 Player.prototype.update = function (dt) {
@@ -67,24 +67,24 @@ Player.prototype.handleInput = function (keyPress) {
 
     // Enables user on left arrow key to move left on the x axis by 102
     // Also enables user not to go off the game tiles on the left side
-    if (keyPress == 'left' && this.x > 0) {
+    if (keyPress == "left" && this.x > 0) {
         this.x -= 102;
     };
 
     // Enables user on right arrow key to move right on the x axis by 102
     // Also enables user not to go off the game tiles on the right side
-    if (keyPress == 'right' && this.x < 405) {
+    if (keyPress == "right" && this.x < 405) {
         this.x += 102;
     };
 
     // Enables user on up arrow key to move upwards on the y axis by 83
-    if (keyPress == 'up' && this.y > 0) {
+    if (keyPress == "up" && this.y > 0) {
         this.y -= 83;
     };
 
     // Enables user on down arrow key to move downwards on the y axis by 83
     // Also enables user not to go off the game tiles on the bottom side
-    if (keyPress == 'down' && this.y < 405) {
+    if (keyPress == "down" && this.y < 405) {
         this.y += 83;
     };
 
@@ -122,12 +122,12 @@ const player = new Player(202, 405);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. 
-    document.addEventListener('keyup', event => {
+    document.addEventListener("keyup", event => {
         const allowedKeys = {
-            37: 'left',
-            38: 'up',
-            39: 'right',
-            40: 'down'
+            37: "left",
+            38: "up",
+            39: "right",
+            40: "down"
         };
         player.handleInput(allowedKeys[event.keyCode]);
     });
@@ -156,7 +156,3 @@ const player = new Player(202, 405);
         restartModal.addEventListener("click", function() {
         window.location.reload();
 });
-   
-   trigger.addEventListener("click", toggleModal);
-   closeButton.addEventListener("click", toggleModal);
-   window.addEventListener("click", windowOnClick);
