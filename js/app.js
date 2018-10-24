@@ -23,7 +23,7 @@ Enemy.prototype.update = function (dt) {
 
     // Once enemies are off the canvas, they reappear randomly with different speeds
     if (this.x > 510) {
-        this.x = -50;
+        this.x = -40;
         this.speed = 200 + Math.floor(Math.random() * 222);
     };
 
