@@ -50,7 +50,7 @@ let Player = function (x, y) {
     this.y = y;
 
     //The image of the player of horn-girl is added to the playing field 
-    this.player = 'images/char-horn-girl.png';
+    this.sprite= 'images/char-horn-girl.png';
 };
 
 Player.prototype.update = function (dt) {
@@ -59,7 +59,7 @@ Player.prototype.update = function (dt) {
 
 // Renders the image of the user into the game
 Player.prototype.render = function () {
-    ctx.drawImage(Resources.get(this.player), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Allows the user to use the arrow keys to jump from tile to tile
@@ -153,8 +153,8 @@ const player = new Player(202, 405);
    
    // restart button for the modal
    const restartModal = document.querySelector("#restart-modal");
-restartModal.addEventListener("click", function () {
-    window.location.reload();
+        restartModal.addEventListener("click", function() {
+        window.location.reload();
 });
    
    trigger.addEventListener("click", toggleModal);
