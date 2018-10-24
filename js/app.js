@@ -1,3 +1,6 @@
+let modal = document.querySelector(".modal");
+let trigger = document.querySelector(".trigger");
+let closeButton = document.querySelector(".close-button");
 
 // Enemies our player must avoid
 let Enemy = function (x, y, speed) {
@@ -31,8 +34,8 @@ Enemy.prototype.update = function (dt) {
         60 + player.y > this.y) {
         player.x = 202;
         player.y = 405;
-    };
-};
+    }
+}
 
 // Renders the enemy into the game
 Enemy.prototype.render = function () {
@@ -51,8 +54,8 @@ let Player = function (x, y) {
 };
 
 Player.prototype.update = function (dt) {
-
-};
+   
+}
 
 // Renders the image of the user into the game
 Player.prototype.render = function () {
@@ -91,6 +94,9 @@ Player.prototype.handleInput = function (keyPress) {
         setTimeout(() => {
             this.x = 202;
             this.y = 405;
+            modal.classList.add("show-modal");
+						closeButton.addEventListener("click", toggleModal);
+						window.addEventListener("click", windowOnClick);
         }, 1000);
     };
 };
@@ -125,3 +131,46 @@ const player = new Player(202, 405);
         };
         player.handleInput(allowedKeys[event.keyCode]);
     });
+
+
+    // Add restart button to the instruction section
+    
+   const restart = document.querySelector("#restart");
+           restart.addEventListener("click", function() {
+           window.location.reload();
+   });
+   
+   /**
+    * @description: This is the JS code for the modal box. The code is taken from
+    * https://sabe.io/tutorials/how-to-create-modal-popup-box
+    */
+   
+   function toggleModal() {
+           modal.classList.toggle("show-modal");
+   }
+   
+   function windowOnClick(event) {
+           if (event.target === modal) {
+                   toggleModal();
+           }
+   }
+   
+   /**
+    * @description: restart button to the modal box
+    */
+   const restartModal = document.querySelector("#restart-modal");
+           restartModal.addEventListener("click", function() {
+           window.location.reload();
+   });
+   
+   /**
+    * @description: Add quit game button to the modal box
+    */
+   const quit = document.querySelector("#quit-game");
+           quit.addEventListener("click", function() {
+           modal.classList.remove("show-modal");
+   });
+   
+   trigger.addEventListener("click", toggleModal);
+   closeButton.addEventListener("click", toggleModal);
+   window.addEventListener("click", windowOnClick);
