@@ -4,16 +4,16 @@ body {
 }
 
 .heading {
-    font-family: 'Shrikhand', cursive;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .simple-text {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
 }
 
 .button {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
 }
 
